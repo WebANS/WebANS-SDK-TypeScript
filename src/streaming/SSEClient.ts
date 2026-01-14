@@ -87,7 +87,7 @@ export class SSEClient {
       this.emit('open', { type: 'open', data: { connected: true } });
     };
 
-    this.eventSource.onerror = (error) => {
+    this.eventSource.onerror = (_error) => {
       this.isConnected = false;
       const err = new Error('SSE connection error');
       this.errorHandlers.forEach((handler) => handler(err));

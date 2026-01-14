@@ -94,4 +94,11 @@ export class JWTAuth implements AuthProvider {
   getExpiresAt(): Date | undefined {
     return this.expiresAt;
   }
+
+  /**
+   * Get the refresh token (if available)
+   */
+  getRefreshToken(): string | undefined {
+    return this.refreshToken;
+  }
 }
